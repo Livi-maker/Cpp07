@@ -41,6 +41,14 @@ unsigned int	Array<T>::size(void) const
 }
 
 template <typename T>
+T&	Array<T>::operator [](unsigned int num)
+{
+	if (num > len - 1)
+		throw std::runtime_error("No such element in the array\n");
+	return (this->array[num]);
+}
+
+template <typename T>
 Array<T>::~Array(void)
 {
 	delete[] array;

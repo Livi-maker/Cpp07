@@ -14,6 +14,7 @@ class Array
 		~Array(void);
 
 		unsigned int	size(void) const;
+		T& operator [](unsigned int num);
 
 	private:
 		T* array;
