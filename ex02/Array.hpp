@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <string>
+#include <ctime>
+#include <cstdlib>
 
 template <typename T>
 class Array

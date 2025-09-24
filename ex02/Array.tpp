@@ -19,8 +19,8 @@ Array<T>::Array(const Array& ref)
 {
 	this->len = ref.size();
 	this->array = new T[len];
-	for (int i = 0; i < len; i++)
-		this->array[i] = ref->array[i];
+	for (unsigned int i = 0; i < len; i++)
+		this->array[i] = ref.array[i];
 }
 
 template <typename T>
@@ -44,7 +44,7 @@ template <typename T>
 T&	Array<T>::operator [](unsigned int num)
 {
 	if (num > len - 1)
-		throw std::runtime_error("No such element in the array\n");
+		throw std::runtime_error("No such element in the array");
 	return (this->array[num]);
 }
 
