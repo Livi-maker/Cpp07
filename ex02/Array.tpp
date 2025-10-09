@@ -44,7 +44,7 @@ template <typename T>
 T&	Array<T>::operator [](unsigned int num)
 {
 	if (num > len - 1)
-		throw std::runtime_error("No such element in the array");
+		throw Array<T>::outOfBondException();
 	return (this->array[num]);
 }
 
@@ -52,4 +52,10 @@ template <typename T>
 Array<T>::~Array(void)
 {
 	delete[] array;
+}
+
+template <typename T>
+const char* Array<T>::outOfBondException::what() const throw()
+{
+	return ("Index out of bond");
 }

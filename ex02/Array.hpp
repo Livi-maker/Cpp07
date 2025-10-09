@@ -17,6 +17,11 @@ class Array
 
 		unsigned int	size(void) const;
 		T& operator [](unsigned int num);
+		class	outOfBondException: public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
 
 	private:
 		T* array;
